@@ -46,6 +46,7 @@ public class EditCommandTest {
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_ISSUE_SUCCESS, editedIssue);
 
         Model expectedModel = new ModelManager(new SaveIt(model.getSaveIt()), new UserPrefs());
+
         expectedModel.updateIssue(model.getFilteredIssueList().get(0), editedIssue);
         expectedModel.commitSaveIt();
 
@@ -65,11 +66,16 @@ public class EditCommandTest {
                 .withDescription(VALID_DESCRIPTION_C).withTags(VALID_TAG_UI).build();
         EditCommand editCommand = new EditCommand(indexLastIssue, descriptor);
 
+
+
         String expectedMessage = String.format(EditCommand.MESSAGE_EDIT_ISSUE_SUCCESS, editedIssue);
 
         Model expectedModel = new ModelManager(new SaveIt(model.getSaveIt()), new UserPrefs());
         expectedModel.updateIssue(lastIssue, editedIssue);
         expectedModel.commitSaveIt();
+
+
+
 
         assertCommandSuccess(editCommand, model, commandHistory, expectedMessage, expectedModel);
     }
