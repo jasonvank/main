@@ -3,8 +3,8 @@ package seedu.saveit.logic.commands;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
-import static seedu.saveit.logic.commands.CommandTestUtil.DESC_AMY;
-import static seedu.saveit.logic.commands.CommandTestUtil.DESC_BOB;
+import static seedu.saveit.logic.commands.CommandTestUtil.DESC_JAVA_PROGRAMMING;
+import static seedu.saveit.logic.commands.CommandTestUtil.DESC_C_PROGRAMMING;
 import static seedu.saveit.logic.commands.CommandTestUtil.VALID_DESCRIPTION_C;
 import static seedu.saveit.logic.commands.CommandTestUtil.VALID_STATEMENT_C;
 import static seedu.saveit.logic.commands.CommandTestUtil.VALID_TAG_UI;
@@ -231,10 +231,10 @@ public class EditCommandTest {
 
     @Test
     public void equals() {
-        final EditCommand standardCommand = new EditCommand(INDEX_FIRST_ISSUE, DESC_AMY);
+        final EditCommand standardCommand = new EditCommand(INDEX_FIRST_ISSUE, DESC_JAVA_PROGRAMMING);
 
         // same values -> returns true
-        EditIssueDescriptor copyDescriptor = new EditIssueDescriptor(DESC_AMY);
+        EditIssueDescriptor copyDescriptor = new EditIssueDescriptor(DESC_JAVA_PROGRAMMING);
         EditCommand commandWithSameValues = new EditCommand(INDEX_FIRST_ISSUE, copyDescriptor);
         assertTrue(standardCommand.equals(commandWithSameValues));
 
@@ -248,10 +248,10 @@ public class EditCommandTest {
         assertFalse(standardCommand.equals(new ClearCommand()));
 
         // different index -> returns false
-        assertFalse(standardCommand.equals(new EditCommand(INDEX_SECOND_ISSUE, DESC_AMY)));
+        assertFalse(standardCommand.equals(new EditCommand(INDEX_SECOND_ISSUE, DESC_JAVA_PROGRAMMING)));
 
         // different descriptor -> returns false
-        assertFalse(standardCommand.equals(new EditCommand(INDEX_FIRST_ISSUE, DESC_BOB)));
+        assertFalse(standardCommand.equals(new EditCommand(INDEX_FIRST_ISSUE, DESC_C_PROGRAMMING)));
     }
 
 }

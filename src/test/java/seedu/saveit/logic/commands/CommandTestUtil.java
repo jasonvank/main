@@ -53,15 +53,15 @@ public class CommandTestUtil {
     public static final String PREAMBLE_WHITESPACE = "\t  \r  \n";
     public static final String PREAMBLE_NON_EMPTY = "NonEmptyPreamble";
 
-    public static final EditCommand.EditIssueDescriptor DESC_AMY;
-    public static final EditCommand.EditIssueDescriptor DESC_BOB;
+    public static final EditCommand.EditIssueDescriptor DESC_JAVA_PROGRAMMING;
+    public static final EditCommand.EditIssueDescriptor DESC_C_PROGRAMMING;
 
     static {
-        DESC_AMY = new EditIssueDescriptorBuilder().withStatement(VALID_STATEMENT_JAVA)
+        DESC_JAVA_PROGRAMMING = new EditIssueDescriptorBuilder().withStatement(VALID_STATEMENT_JAVA)
             .withDescription(VALID_DESCRIPTION_JAVA)
             .withSolutions(VALID_SOLUTION_JAVA)
             .withTags(VALID_TAG_SYNTAX).build();
-        DESC_BOB = new EditIssueDescriptorBuilder().withStatement(VALID_STATEMENT_C)
+        DESC_C_PROGRAMMING = new EditIssueDescriptorBuilder().withStatement(VALID_STATEMENT_C)
             .withDescription(VALID_DESCRIPTION_C)
             .withSolutions(VALID_SOLUTION_C)
             .withTags(VALID_TAG_UI, VALID_TAG_SYNTAX).build();

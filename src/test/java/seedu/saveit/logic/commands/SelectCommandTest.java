@@ -39,7 +39,6 @@ public class SelectCommandTest {
     @Ignore
     public void execute_validIndexUnfilteredList_success() {
         Index lastIssueIndex = Index.fromOneBased(model.getFilteredIssueList().size());
-
         assertExecutionSuccess(INDEX_FIRST_ISSUE);
         assertExecutionSuccess(INDEX_THIRD_ISSUE);
         assertExecutionSuccess(lastIssueIndex);
